@@ -62,6 +62,7 @@ export class CoffeeListComponent {
   order = output<string>();
 
   onOrder(productName: string) {
+    console.log(`Ordered: ${productName}`);
     this.order.emit(productName);
   }
 
