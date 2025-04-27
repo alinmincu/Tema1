@@ -1,0 +1,41 @@
+<section class="menu-section">
+    <h2 class="section-title">OUR SPECIAL COFFEE</h2>
+    <div class="product-grid">
+        @for (product of coffeeService.filteredProducts(); track product.id) {
+        @if (product.category === 'coffee') {
+        <div class="product-card">
+            <img [src]="product.imageUrl || 'https://via.placeholder.com/300x200?text=Coffee+Image'"
+                [alt]="product.name" class="product-image" (error)="handleImageError($event)">
+            <div class="product-details">
+                <h3 class="product-name">{{ product.name }}</h3>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">Rs. {{ product.price }}</p>
+                <button class="order-btn" (click)="onOrder(product.name)">
+                    Order Now
+                </button>
+            </div>
+        </div>
+        }
+        }
+    </div>
+
+    <h2 class="section-title">OUR SPECIAL DESSERT</h2>
+    <div class="product-grid">
+        @for (product of coffeeService.filteredProducts(); track product.id) {
+        @if (product.category === 'dessert') {
+        <div class="product-card">
+            <img [src]="product.imageUrl || 'https://via.placeholder.com/300x200?text=Dessert+Image'"
+                [alt]="product.name" class="product-image" (error)="handleImageError($event)">
+            <div class="product-details">
+                <h3 class="product-name">{{ product.name }}</h3>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">Rs. {{ product.price }}</p>
+                <button class="order-btn" (click)="onOrder(product.name)">
+                    Order Now
+                </button>
+            </div>
+        </div>
+        }
+        }
+    </div>
+</section>
