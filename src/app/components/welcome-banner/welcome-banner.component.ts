@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
     <div class="welcome-banner">
-      <h2>Welcome to</h2>
+      <h2>WELCOME TO THE COFFEE MAKERY</h2>
       <h1>We serve the richest coffee in the city!</h1>
     </div>
   `,

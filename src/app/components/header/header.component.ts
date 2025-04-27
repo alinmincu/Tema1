@@ -1,40 +1,65 @@
-import { Component, input } from '@angular/core';
+import { Component, input } from "@angular/core";
 
 @Component({
   selector: 'app-header',
   standalone: true,
   template: `
     <header class="header">
-      <h1>COFFEE MAKERY</h1>
-      <nav>
-        <a routerLink="/">HOME</a>
-        <a routerLink="/">COFFEE</a>
-        <a routerLink="/">SHOP</a>
-      </nav>
-      @if (selectedCoffee()) {
-        <div class="selected-coffee">Selected: {{ selectedCoffee() }}</div>
-      }
+      <div class="left-section">
+        <h1>COFFEE MAKERY</h1>
+      </div>
+      
+      <div class="right-section">
+        <nav>
+          <a routerLink="/">HOME</a>
+          <a routerLink="/">COFFEE</a>
+          <a routerLink="/">SHOP</a>
+        </nav>
+        @if (selectedCoffee()) {
+          <div class="selected-coffee">Selected: {{ selectedCoffee() }}</div>
+        }
+      </div>
     </header>
   `,
   styles: [`
     .header {
-      background: #6F4E37;
-      color: white;
-      padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    nav a {
+      padding: 1rem;
+      background: #6F4E37;
       color: white;
-      margin: 0 1rem;
-      text-decoration: none;
     }
+    
+    .left-section {
+      flex: 1;
+    }
+    
+    .center-section {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .right-section {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+    
     .selected-coffee {
       background: white;
       color: #6F4E37;
       padding: 0.5rem;
       border-radius: 4px;
+      font-size: 0.9rem;
     }
   `]
 })
